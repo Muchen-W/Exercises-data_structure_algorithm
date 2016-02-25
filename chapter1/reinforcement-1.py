@@ -21,6 +21,10 @@ def sumSquare(n):
 def sumOddSquare(n):
     return sum(i*i for i in range(1, n) if not is_even(i))
 
+def choice(data):
+    import random
+    return data[random.randrange(len(data))]
+
 
 if __name__ == '__main__':
     import math
@@ -33,3 +37,4 @@ if __name__ == '__main__':
     print(minmax(data))
     print(sumSquare(x))
     print(sumOddSquare(x))
+    print(choice(data))
