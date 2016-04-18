@@ -6,10 +6,8 @@ def permutation1(chars):
     else:
         result = list()
         perms = permutation1(chars[1:])
-        print(perms)
         for perm in perms:
             for i in range(len(chars)):
-                print(perm[:i])
                 result.append(perm[:i]+chars[0]+perm[i:])
         return result
 
