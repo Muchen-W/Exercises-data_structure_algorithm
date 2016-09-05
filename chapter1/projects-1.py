@@ -22,7 +22,49 @@ def permutation2(chars, start, end):
             chars[start], chars[i] = chars[i], chars[start]
 
 
-if __name__ == '__main__':
+# p1-30
+def logarithm1(num, cnt=0):
+    if num >= 2:
+        cnt = logarithm1(num/2, cnt)
+        cnt += 1
+    return cnt
+
+
+def logarithm2(num, cnt=0):
+    if num < 2:
+        return cnt
+    else:
+        cnt += 1
+        return logarithm2(num/2, cnt)
+
+
+def logarithm3(num):
+    cnt = 0
+    while num >= 2:
+        num /= 2
+        cnt += 1
+    return cnt
+
+
+def logarithm4(num):
+    import math
+    return math.floor(math.log2(num))
+
+
+def test1():
     lst = ['c', 'a', 't', 'd', 'o', 'g']
     print(permutation1(lst))
     permutation2(lst, 0, len(lst)-1)
+
+
+def test2():
+    number = 15
+    print(logarithm1(number))
+    print(logarithm2(number))
+    print(logarithm3(number))
+    print(logarithm4(number))
+
+
+if __name__ == '__main__':
+    test2()
+
